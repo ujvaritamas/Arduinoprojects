@@ -1,4 +1,4 @@
-# aurqualityArduino
+# airqualityArduino
 measure air quality with arduino
 
 Needed Hardware
