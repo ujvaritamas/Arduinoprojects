@@ -7,13 +7,13 @@ SdsDustSensor sds(SDS_RX_PIN, SDS_TX_PIN);
 
 void init_sds011(){
     //ldc init
-    setup_lcd_1602BB()
+    setup_lcd_1602BB();
 
     //init sds011
     Serial.begin(9600);
     sds.begin();
     sds.setActiveReportingMode();
-    sds.setContinuousWorkingPeriod()
+    sds.setContinuousWorkingPeriod();
 }
 
 char* get_sds_data(){
@@ -31,9 +31,9 @@ char* get_sds_data(){
     //Serial.print(", PM10 = ");
     //Serial.println(pm.pm10);
 
-    print_data(pm.toString());
+    lcd.print(pm.toString());
   } else {
     // notice that loop delay is set to 0.5s and some reads are not available
-    print_data("Could not read values from sensor, reason: ");
+    lcd.print("Could not read values from sensor.");
   }
 }
