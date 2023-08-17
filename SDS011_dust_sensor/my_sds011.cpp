@@ -17,6 +17,12 @@ void init_sds011(){
   Serial.println(sds.setContinuousWorkingPeriod().toString());
 }
 
+void print_pm25_res(float res){
+    char buffer[30];
+    snprintf(buffer, sizeof buffer, "%f", res);
+    print_data(buffer);
+  }
+
 void get_and_print_sds_data(){
   char pm2_buffer[10];
   char pm10_buffer[20];
@@ -24,7 +30,7 @@ void get_and_print_sds_data(){
   if (pm.isOk()) {
 
     //convert data to char*
-    print_pm25_res(pm.pm25)
+    print_pm25_res(pm.pm25);
 
     Serial.print(", PM2.5 = ");
     Serial.print(pm.pm25);
@@ -39,9 +45,6 @@ void get_and_print_sds_data(){
     Serial.print(pm.statusToString());
   }
 
-  void print_pm25_res(float res){
-    char buffer[30];
-    snprintf(buffer, sizeof buffer, "%f", res);
-    print_data(buffer)
-  }
 }
+
+
