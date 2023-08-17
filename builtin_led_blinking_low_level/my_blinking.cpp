@@ -1,7 +1,8 @@
 #include "my_blinking.h"
+#include <Arduino_h>
 
 void init_builtin_led(){
-    uint8_t *p;
+    volatile uint8_t* p;
 
     //configure PB5 to output
     p = MY_DDRB_ADDR;
@@ -10,13 +11,13 @@ void init_builtin_led(){
 }
 
 void turn_on_builtin_led(){
-    uint8_t *p;
+    volatile uint8_t* p;
     p = MY_PORTB_ADDR;
     *p |= 1 << 5;
 }
 
 void turn_off_builtin_led(){
-    uint8_t *p;
+    volatile uint8_t* p;
     p = MY_PORTB_ADDR;
     *p &= ~(1 << 5);
 }
