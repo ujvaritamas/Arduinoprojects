@@ -13,7 +13,7 @@ void setup_lcd_1602BB() {
     //lcd.nobacklight()
 }
 
-void print_data(string data){
+void print_data(char* data){
     lcd.print(data);
 }
 
