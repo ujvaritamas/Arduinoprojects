@@ -1,9 +1,9 @@
-#ifndef MY_LCD_H
+#ifndef MY_SDS011_H
 #define MY_SDS011_H
 
-#define SDS_RX_PIN  0
-#define SDS_TX_PIN  1
+#define SDS_RX_PIN  2
+#define SDS_TX_PIN  4
 
 void init_sds011();
-char* get_and_print_sds_data();
+void get_and_print_sds_data();
 #endif
