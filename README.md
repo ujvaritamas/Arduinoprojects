@@ -2,6 +2,10 @@
 
 Arduino projects
 
+create library: https://roboticsbackend.com/arduino-create-library/
+
+sketch -> show sketch folder, create files there
+
 measure air quality with arduino
 
 Needed Hardware
