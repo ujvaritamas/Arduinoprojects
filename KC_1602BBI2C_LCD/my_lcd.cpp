@@ -9,7 +9,7 @@ void setup_lcd_1602BB() {
 
     //lcd.noBacklight();
     lcd.setCursor(1, 0);
-    lcd.print("Hello, Wokwi!");
+    lcd.print("Hello!");
     //lcd.nobacklight()
 }
 
