@@ -5,11 +5,15 @@ LiquidCrystal_I2C lcd(LCD_I2C_ADDR, LCD_COL, LCD_ROW);
 
 void setup_lcd_1602BB() {
     lcd.init();
-    //lcd.backlight();\
+    lcd.backlight();
 
-    lcd.nobacklight()
+    //lcd.noBacklight();
     lcd.setCursor(1, 0);
     lcd.print("Hello, Wokwi!");
     //lcd.nobacklight()
+}
+
+void print_data(string data){
+    lcd.print(data);
 }
 
