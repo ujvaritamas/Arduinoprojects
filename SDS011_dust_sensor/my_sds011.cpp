@@ -12,13 +12,17 @@ void init_sds011(){
   //init sds011
   sds.begin();
   Serial.println(sds.queryFirmwareVersion().toString()); // prints firmware version
-  Serial.println(sds.setActiveReportingMode().toString()); // ensures sensor is in 'active' reporting mode
-  Serial.println(sds.setContinuousWorkingPeriod().toString());
+  //Serial.println(sds.setActiveReportingMode().toString()); // ensures sensor is in 'active' reporting mode
+  //Serial.println(sds.setContinuousWorkingPeriod().toString());
+  //Serial.println(sds.setQueryReportingMode().toString()); // ensures sensor is in 'active' reporting mode
+  ReportingModeResult result = sds.setQueryReportingMode();
+  Serial.println(result.toString());
 }
 
 
 void get_and_print_sds_data(){
-    PmResult pm = sds.readPm();
+    //PmResult pm = sds.readPm();
+    PmResult pm = sds.queryPm();
     if (pm.isOk()) {
       print_sds011_data(pm.pm25, pm.pm10);
   
